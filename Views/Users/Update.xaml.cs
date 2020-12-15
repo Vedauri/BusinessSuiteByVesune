@@ -50,5 +50,31 @@ namespace BusinessSuiteByVesune.Views.Users
                 MessageBox.Show("Unable to updated user", "Failure");
             }
         }
+
+        public bool IsValidForm()
+        {
+            if (TxtName.Text.Length == 0)
+            {
+                TxtName.BorderBrush = new SolidColorBrush(Colors.Red);
+                MessageBox.Show("Enter the new user's name", "Notice");
+                return false;
+            }
+
+            if (TxtPin.Text.Length == 0)
+            {
+                TxtName.BorderBrush = new SolidColorBrush(Colors.Red);
+                MessageBox.Show("Enter the new user's pin", "Notice");
+                return false;
+            }
+
+            if (TxtWorkRate.Text.Length == 0)
+            {
+                TxtName.BorderBrush = new SolidColorBrush(Colors.Red);
+                MessageBox.Show("Enter the new user's work rate or enter 0 if no rate is to be added", "Notice");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

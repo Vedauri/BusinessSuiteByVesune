@@ -53,5 +53,24 @@ namespace BusinessSuiteByVesune.Views.Transactions
                 MessageBox.Show("Unable to create transaction", "Failure");
             }
         }
+
+        public bool IsValidForm()
+        {
+            if (TxtTransactionAmount.Text.Length == 0)
+            {
+                TxtTransactionAmount.BorderBrush = new SolidColorBrush(Colors.Red);
+                MessageBox.Show("Enter the transaction amount", "Notice");
+                return false;
+            }
+
+            if (TxtTransactionName.Text.Length == 0)
+            {
+                TxtTransactionName.BorderBrush = new SolidColorBrush(Colors.Red);
+                MessageBox.Show("Enter a name for this transaction", "Notice");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -170,5 +170,6 @@ namespace BusinessSuiteByVesune.Views.Times
         {
             this.Close();
         }
+
     }
 }
