@@ -139,6 +139,7 @@ namespace BusinessSuiteByVesune.Views
             if (transaction.TransactionId > 0)
             {
                 new TransactionCRUD().Destroy(transaction.TransactionId);
+                BindDataGrid();
             }
         }
     }
