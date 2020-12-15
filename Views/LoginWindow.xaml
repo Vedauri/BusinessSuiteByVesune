@@ -16,7 +16,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Name="LblWelcome" Content="Business Suite by Vesune" Style="{StaticResource LblHeader}" />
+            <Label Grid.Row="0" Grid.Column="0" Name="LblWelcome" Content="903 Business Suite" Style="{StaticResource LblHeader}" />
             <PasswordBox Grid.Row="1" Grid.Column="0" Name="txtPassword" Style="{StaticResource TxtPassword}" />
             <Button Grid.Row="2" Grid.Column="0" IsDefault="True" Name="BtnLogin" Content="LOGIN" Click="BtnLogin_Click" Style="{StaticResource BtnFree}" />
         </Grid>
