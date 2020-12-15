@@ -18,7 +18,6 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
-                <RowDefinition />
             </Grid.RowDefinitions>
 
             <TextBox Name="txtItemId" Text="{Binding Path=ItemId, Mode=TwoWay}" Visibility="Hidden" />

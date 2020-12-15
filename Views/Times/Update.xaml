@@ -19,7 +19,6 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <TextBox Name="TxtWorkPeriodId" Text="{Binding Path=WorkPeriodId, Mode=TwoWay}" Visibility="Hidden" />
@@ -57,8 +56,8 @@
 
                 <Label Name="LblTotal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="18" Content="" />
 
-                <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Click="BtnCancel_Click" Content="Cancel" />
-                <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Click="BtnSubmit_Click" Content="Submit" />
+                <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Click="BtnCancel_Click" Content="Cancel" Style="{StaticResource BtnSmallOption}" />
+                <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Click="BtnSubmit_Click" Content="Submit" Style="{StaticResource BtnSmallOption}" />
 
             </Grid>
         </Grid>

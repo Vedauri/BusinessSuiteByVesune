@@ -15,12 +15,13 @@
         <Grid.RowDefinitions>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Viewbox Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Center">
             <Calendar x:Name="CalMain" 
                   BorderThickness="1" 
                   DisplayMode="Month" 
                   SelectionMode="SingleRange" 
                   IsTodayHighlighted="True" 
+                  Style="{StaticResource calViewBox}"
                   >
         </Calendar>
         </Viewbox>

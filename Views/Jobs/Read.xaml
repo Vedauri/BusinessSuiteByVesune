@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Jobs"
         mc:Ignorable="d"
-        Title="Business Suite - View Job Information" Height="450" Width="800">
+        Title="Business Suite - View Job Information" Height="500" Width="800">
     <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />

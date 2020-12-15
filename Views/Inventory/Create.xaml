@@ -55,8 +55,8 @@
                 <TextBox Name="txtNotes" Style="{StaticResource TxtFree}" Text="{Binding Path=Notes, Mode=TwoWay}" />
             </GroupBox>
 
-            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" />
-            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" />
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" Style="{StaticResource BtnSmallOption}" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" Style="{StaticResource BtnSmallOption}" />
 
         </Grid>
     </Grid>

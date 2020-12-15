@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Transactions"
         mc:Ignorable="d"
-        Title="Update" Height="450" Width="800">
+        Title="Update" Height="300" Width="800">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -15,7 +15,6 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
@@ -41,8 +40,8 @@
                 <TextBox Name="TxtNotes" Style="{StaticResource TxtFree}" Text="{Binding Path=Notes, Mode=TwoWay}" />
             </GroupBox>
 
-            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" />
-            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" />
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" Style="{StaticResource BtnSmallOption}" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" Style="{StaticResource BtnSmallOption}" />
 
         </Grid>
     </Grid>

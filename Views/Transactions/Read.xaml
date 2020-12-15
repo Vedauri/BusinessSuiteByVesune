@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Transactions"
         mc:Ignorable="d"
-        Title="Read" Height="450" Width="800">
+        Title="Read" Height="200" Width="800">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -15,8 +15,6 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
