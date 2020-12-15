@@ -1,0 +1,42 @@
+﻿<Window x:Class="BusinessSuiteByVesune.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune"
+        mc:Ignorable="d"
+        Title="Business Suite" WindowState="Maximized" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Name="MainMenu" Grid.Column="0" Background="LightSlateGray">
+            <MenuItem Click="miHome_Click"  Name="miHome" Header="Home" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miInventory_Click" Name="miInventory" Header="Inventory" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miJobs_Click" Name="miJobs" Header="Jobs" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miOrders_Click" Name="miOrders" Header="Orders" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miInvoices_Click" Name="miInvoices" Header="Invoices" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miUsers_Click" Name="miUsers" Header="Users" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miTimes_Click" Name="miTimes" Header="Times" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miTransactions_Click"  Name="miTransactions" Header="Transactions" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miManager_Click" Name="miManager" Header="Manager" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miLogout_Click"  Name="miLogout" Header="Logout" Style="{StaticResource MenuBox}"></MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Name="LblContentTitle" Style="{StaticResource LblContentTitle}" />
+            <ContentPresenter Grid.Row="1" x:Name="CpCurrentScreenContent" Content="{Binding Path=CurrentScreenContent}" />
+        </Grid>
+    </Grid>
+</Window>

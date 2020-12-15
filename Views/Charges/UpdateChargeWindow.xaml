@@ -1,0 +1,52 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Charges.UpdateChargeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Charges"
+        mc:Ignorable="d"
+        Title="Business Suite - Update Existing Charge" Height="450" Width="800">
+    <Grid Name="MainGrid">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBox Name="TxtJobId" Text="{Binding Path=JobId, Mode=TwoWay}" Visibility="Hidden" />
+            <TextBox Name="TxtChargeId" Text="{Binding Path=ChargeId, Mode=TwoWay}" Visibility="Hidden" />
+
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+                <TextBox Name="TxtChargeName" Style="{StaticResource TxtFree}" Text="{Binding Path=ChargeName, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Charge Price" Grid.Row="0" Grid.Column="1">
+                <TextBox Name="TxtChargeAmount" Style="{StaticResource TxtFree}" Text="{Binding Path=ChargeAmount, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Charge Quantity" Grid.Row="0" Grid.Column="2">
+                <TextBox Name="TxtChargeQuantity" Style="{StaticResource TxtFree}" Text="{Binding Path=ChargeQuantity, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Description" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBox Name="TxtChargeDescription" Style="{StaticResource TxtFree}" Text="{Binding Path=ChargeDescription, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Notes" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBox Name="TxtChargeNotes" Style="{StaticResource TxtFree}" Text="{Binding Path=ChargeNotes, Mode=TwoWay}" />
+            </GroupBox>
+
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" />
+
+        </Grid>
+    </Grid>
+</Window>

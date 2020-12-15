@@ -1,0 +1,49 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Transactions.Create"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Transactions"
+        mc:Ignorable="d"
+        Title="Create" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Transaction Name" Grid.Row="0" Grid.Column="0">
+                <TextBox Name="TxtTransactionName" Style="{StaticResource TxtFree}" Text="{Binding Path=Name, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Transaction Amount" Grid.Row="0" Grid.Column="1">
+                <TextBox Name="TxtTransactionAmount" Style="{StaticResource TxtFree}" Text="{Binding Path=Amount, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="For Which Job?" Grid.Row="0" Grid.Column="2">
+                <ComboBox Name="CbJob" SelectedValue="{Binding Path=JobId, Mode=TwoWay}" Style="{StaticResource cbFree}" />
+            </GroupBox>
+
+            <GroupBox Header="And Which Employee?" Grid.Row="0" Grid.Column="3">
+                <ComboBox Name="CbUsers" SelectedValue="{Binding Path=UserId, Mode=TwoWay}" Style="{StaticResource cbFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Notes" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBox Name="TxtNotes" Style="{StaticResource TxtFree}" Text="{Binding Path=Notes, Mode=TwoWay}" />
+            </GroupBox>
+
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" />
+
+        </Grid>
+    </Grid>
+</Window>

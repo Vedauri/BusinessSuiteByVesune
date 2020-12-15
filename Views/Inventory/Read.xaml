@@ -1,0 +1,60 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Inventory.Read"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Inventory"
+        mc:Ignorable="d"
+        Title="Business Suite - Viewing Inventory Item Information" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBox Name="txtItemId" Text="{Binding Path=ItemId, Mode=TwoWay}" Visibility="Hidden" />
+
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+                <Label Name="txtName" Content="{Binding Path=ItemId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Quantity" Grid.Row="0" Grid.Column="1">
+                <Label Name="txtQuantity" Content="{Binding Path=Quantity, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Price" Grid.Row="0" Grid.Column="2">
+                <Label Name="txtPrice" Content="{Binding Path=Price, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Sku Number" Grid.Row="0" Grid.Column="3">
+                <Label Name="txtSkuNumber" Content="{Binding Path=SkuNumber, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Item Type" Grid.Row="1" Grid.Column="0">
+                <ComboBox Name="CbItemType" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=ItemTypeId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Location" Grid.Row="1" Grid.Column="1">
+                <ComboBox Name="CbLocationTypes" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=LocationTypeId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Description" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+                <Label Name="txtDescription" Content="{Binding Path=Description, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Notes" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Name="txtNotes" Content="{Binding Path=Notes, Mode=TwoWay}" />
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</Window>

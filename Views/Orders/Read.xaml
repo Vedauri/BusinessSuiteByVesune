@@ -1,0 +1,60 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Orders.Read"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Orders"
+        mc:Ignorable="d"
+        Title="Business Suite - View Order Information" Height="450" Width="800">
+    <Grid Name="MainGrid">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBox Name="TxtOrderId" Text="{Binding Path=OrderId, Mode=TwoWay}" Visibility="Hidden" />
+
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+                <Label Name="TxtName" Content="{Binding Path=Name, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Quantity" Grid.Row="0" Grid.Column="2">
+                <Label Name="TxtQuantity" Content="{Binding Path=Quantity, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Price" Grid.Row="0" Grid.Column="3">
+                <Label Name="TxtPrice" Content="{Binding Path=Price, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Status" Grid.Row="0" Grid.Column="1">
+                <Label Name="TxtOrderStatus" Content="{Binding Path=OrderStatusId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Ordered Date" Grid.Row="1" Grid.Column="0">
+                <Label Name="TxtOrderedDate" Content="{Binding Path=OrderedDate, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Received Date" Grid.Row="1" Grid.Column="1">
+                <Label Name="TxtReceivedDate" Content="{Binding Path=ReceivedDate, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Description" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBox Name="TxtDescription" Style="{Binding Path=TxtFreeMulti}" Text="{Binding Path=Description, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Job" Grid.Row="2" Grid.Column="0">
+                <Label Name="LblJobName" />
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</Window>

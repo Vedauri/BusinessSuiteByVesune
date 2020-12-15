@@ -1,0 +1,168 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views"
+        mc:Ignorable="d"
+        Title="ManagerWindow" Height="450" Width="800">
+    <Grid Name="gMain">
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Name="GbItemTypes" Header="Item Types" Grid.Row="0" Grid.Column="0">
+            <Grid Name="gItemTypes">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Name="gItemTypeOptions" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource BtnSmallOption}" Name="BtnCreateItemType" Click="BtnCreateItemType_Click"  Content="New" />
+                    <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource BtnSmallOption}" Name="BtnUpdateItemType" Click="BtnUpdateItemType_Click"  Content="Edit" />
+                </Grid>
+                <Grid Name="gItemTypeData" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="dgItemTypes" AutoGenerateColumns="False"
+                      CanUserAddRows="False" 
+                      IsReadOnly="True" 
+                      SelectionMode="Single"
+                      GridLinesVisibility="None"
+                      SelectionUnit="FullRow"
+                      CellStyle="{StaticResource cellStyle}"
+                      RowStyle="{StaticResource rowStyle}"
+                      ColumnHeaderStyle="{StaticResource columnHeaderStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Path=ItemTypeId}" />
+                            <DataGridTextColumn Header="Name" Width="100*" Binding="{Binding Path=ItemTypeName}" />
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Name="GbJobTypes" Header="Job Types" Grid.Row="0" Grid.Column="1">
+            <Grid Name="gJobTypes">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Name="gJobTypeOptions" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource BtnSmallOption}" Name="BtnCreateJobType" Click="BtnCreateJobType_Click"  Content="New" />
+                    <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource BtnSmallOption}" Name="BtnUpdateJobType" Click="BtnUpdateJobType_Click"  Content="Edit" />
+                </Grid>
+                <Grid Name="gJobTypeData" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="dgJobTypes" AutoGenerateColumns="False"
+                      CanUserAddRows="False" 
+                      IsReadOnly="True" 
+                      SelectionMode="Single"
+                      GridLinesVisibility="None"
+                      SelectionUnit="FullRow"
+                      CellStyle="{StaticResource cellStyle}"
+                      RowStyle="{StaticResource rowStyle}"
+                      ColumnHeaderStyle="{StaticResource columnHeaderStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Visibility="Hidden" Binding="{Binding Path=JobTypeId}" />
+                            <DataGridTextColumn Header="Name" Width="100*" Binding="{Binding Path=JobTypeName}" />
+                        </DataGrid.Columns>
+                       
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Name="GbLocationTypes" Header="Location Types" Grid.Row="1" Grid.Column="0">
+            <Grid Name="gLocationTypes">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Name="gLocationTypeOptions" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource BtnSmallOption}" Name="BtnCreateLocationType" Click="BtnCreateLocationType_Click"  Content="New" />
+                    <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource BtnSmallOption}" Name="BtnUpdateLocationType" Click="BtnUpdateLocationType_Click"  Content="Edit" />
+                </Grid>
+                <Grid Name="gLocationTypeData" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="dgLocationTypes" AutoGenerateColumns="False"
+                      CanUserAddRows="False" 
+                      IsReadOnly="True" 
+                      SelectionMode="Single"
+                      GridLinesVisibility="None"
+                      SelectionUnit="FullRow"
+                      CellStyle="{StaticResource cellStyle}"
+                      RowStyle="{StaticResource rowStyle}"
+                      ColumnHeaderStyle="{StaticResource columnHeaderStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Visibility="Hidden" Binding="{Binding Path=LocationTypeId}" />
+                            <DataGridTextColumn Header="Name" Width="100*" Binding="{Binding Path=LocationTypeName}" />
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

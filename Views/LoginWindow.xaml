@@ -1,0 +1,24 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Name="LblWelcome" Content="Business Suite by Vesune" Style="{StaticResource LblHeader}" />
+            <PasswordBox Grid.Row="1" Grid.Column="0" Name="txtPassword" Style="{StaticResource TxtPassword}" />
+            <Button Grid.Row="2" Grid.Column="0" IsDefault="True" Name="BtnLogin" Content="LOGIN" Click="BtnLogin_Click" Style="{StaticResource BtnFree}" />
+        </Grid>
+    </Grid>
+</Window>

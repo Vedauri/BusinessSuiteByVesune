@@ -1,0 +1,67 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Jobs.Update"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Jobs"
+        mc:Ignorable="d"
+        Title="Business Suite - Update Job" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBox Name="TxtJobId" Text="{Binding Path=JobId, Mode=TwoWay}" Visibility="Hidden" />
+
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+                <TextBox Name="txtName" Style="{StaticResource TxtFree}" Text="{Binding Path=Name, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Balance Due" Grid.Row="0" Grid.Column="1">
+                <TextBox Name="TxtBalanceDue" Style="{StaticResource TxtFree}" Text="{Binding Path=BalanceDue, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="City" Grid.Row="0" Grid.Column="2">
+                <TextBox Name="TxtCity" Style="{StaticResource TxtFree}" Text="{Binding Path=City, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Scheduled For" Grid.Row="0" Grid.Column="3">
+                <DatePicker Name="TxtScheduledDate" Style="{StaticResource DpFree}" SelectedDate="{Binding Path=ScheduledDate, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Mobile?" Grid.Row="1" Grid.Column="0">
+                <CheckBox Name="ChkMobile" IsChecked="{Binding Path=Mobile}" />
+            </GroupBox>
+
+            <GroupBox Header="Job Type" Grid.Row="1" Grid.Column="1">
+                <ComboBox Name="cbJobType" SelectedValue="{Binding Path=JobTypeId, Mode=TwoWay}" Style="{StaticResource cbFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Job Status" Grid.Row="1" Grid.Column="2">
+                <ComboBox Name="cbJobStatusType" SelectedValue="{Binding Path=JobStatusTypeId, Mode=TwoWay}" Style="{StaticResource cbFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Description" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBox Name="txtDescription" Style="{StaticResource TxtFree}" Text="{Binding Path=Description, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Notes" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBox Name="txtNotes" Style="{StaticResource TxtFree}" Text="{Binding Path=Notes, Mode=TwoWay}" />
+            </GroupBox>
+
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" />
+
+        </Grid>
+    </Grid>
+</Window>

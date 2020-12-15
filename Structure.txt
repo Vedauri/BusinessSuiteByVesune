@@ -1,0 +1,44 @@
+﻿Business Logic Structure:
+
+Users login with PINs
+Admins login with a special PIN
+
+logging in brings you to a control panel
+
+Admins will see everything
+
+Users will only see clock in / out (this can be changed)
+
+first page is control panel:
+
+Inventory
+Jobs
+Orders
+Users
+
+Inventory: List of Items
+Search
+CRUD
+Export
+
+Jobs: List of Jobs
+Search
+CRUD
+Export
+Create Invoice option
+Jobs can have Charges, Items, Orders and Users attached
+
+Orders: List of Orders
+Search
+CRUD
+Export
+Orders can have Jobs, Items attached to them (Items depending on status)
+
+Users:
+search
+CRUD
+export
+Users can have nothing attached to them
+
+Whenever looking at hours, keep in mind that users are not paid on certain days.
+need a way to see how many hours since last paid

@@ -1,0 +1,38 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Invoice.Read"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Invoice"
+        mc:Ignorable="d"
+        Title="Business Suite - View Invoice" Height="450" Width="800">
+    <Grid Name="MainGrid">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+                <Label Name="TxtName" Content="{Binding Path=InvoiceName, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Invoice Type" Grid.Row="0" Grid.Column="1">
+                <ComboBox IsEditable="False" Name="cbInvoiceType" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=InvoiceTypeId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Job" Grid.Row="0" Grid.Column="2">
+                <ComboBox IsEditable="False" Name="cbJobs" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=JobId, Mode=TwoWay}" />
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</Window>

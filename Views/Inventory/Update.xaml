@@ -1,0 +1,63 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Inventory.Update"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Inventory"
+        mc:Ignorable="d"
+        Title="Business Suite - Update Existing Inventory Item" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBox Name="txtItemId" Text="{Binding Path=ItemId, Mode=TwoWay}" Visibility="Hidden" />
+
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+                <TextBox Name="txtName" Style="{StaticResource TxtFree}" Text="{Binding Path=ItemId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Description" Grid.Row="0" Grid.Column="1">
+                <TextBox Name="txtDescription" Style="{StaticResource TxtFree}" Text="{Binding Path=Description, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Price" Grid.Row="0" Grid.Column="2">
+                <TextBox Name="txtPrice" Style="{StaticResource TxtFree}" Text="{Binding Path=Price, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Sku Number" Grid.Row="0" Grid.Column="3">
+                <TextBox Name="txtSkuNumber" Style="{StaticResource TxtFree}" Text="{Binding Path=SkuNumber, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Item Type" Grid.Row="1" Grid.Column="0">
+                <ComboBox Name="CbItemType" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=ItemTypeId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Location" Grid.Row="1" Grid.Column="1">
+                <ComboBox Name="CbLocationTypes" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=LocationTypeId, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Notes" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+                <TextBox Name="txtNotes" Style="{StaticResource TxtFree}" Text="{Binding Path=Notes, Mode=TwoWay}" />
+            </GroupBox>
+
+            <GroupBox Header="Quantity" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBox Name="txtQuantity" Style="{StaticResource TxtFree}" Text="{Binding Path=Quantity, Mode=TwoWay}" />
+            </GroupBox>
+
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Update" Click="BtnSubmit_Click" />
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,77 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Times.Create"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Times"
+        mc:Ignorable="d"
+        Title="Business Suite - Create New Time Entry" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBox Name="TxtWorkPeriodId" Text="{Binding Path=WorkPeriodId, Mode=TwoWay}" Visibility="Hidden" />
+                <TextBox Name="TxtUserId" Text="{Binding Path=UserId, Mode=TwoWay}" Visibility="Hidden" />
+
+                <GroupBox Header="Start Hour" Grid.Row="0" Grid.Column="0">
+                    <TextBox Name="TxtStartHour" LostFocus="ReloadTotalTime_LostFocus" Style="{StaticResource TxtFree}" Text="{Binding Path=StartHour, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="Start Minute" Grid.Row="0" Grid.Column="1">
+                    <TextBox Name="TxtStartMinute" LostFocus="ReloadTotalTime_LostFocus" Style="{StaticResource TxtFree}" Text="{Binding Path=StartMinute, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="AM or PM" Grid.Row="0" Grid.Column="2">
+                    <ComboBox Name="CbStartMeridiem" SelectionChanged="ReloadTotalTime_LostFocus" SelectedValue="{Binding Path=StartMeridiem, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="End Hour" Grid.Row="1" Grid.Column="0">
+                    <TextBox Name="TxtEndHour" LostFocus="ReloadTotalTime_LostFocus"  Style="{StaticResource TxtFree}" Text="{Binding Path=EndHour, Mode=TwoWay}" />
+                </GroupBox>
+
+
+                <GroupBox Header="End Minute" Grid.Row="1" Grid.Column="1">
+                    <TextBox Name="TxtEndMinute" LostFocus="ReloadTotalTime_LostFocus" Style="{StaticResource TxtFree}" Text="{Binding Path=EndMinute, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="AM or PM" Grid.Row="1" Grid.Column="2">
+                    <ComboBox Name="CbEndMeridiem" SelectionChanged="ReloadTotalTime_LostFocus" SelectedValue="{Binding Path=EndMeridiem, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="Start Date" Grid.Row="2" Grid.Column="0">
+                    <DatePicker Name="DpStartDate" Text="{Binding Path=Start, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="End Date" Grid.Row="2" Grid.Column="1">
+                    <DatePicker Name="DpEndDate" LostFocus="ReloadTotalTime_LostFocus" Text="{Binding Path=End, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="Select User" Grid.Row="2" Grid.Column="2">
+                    <ComboBox Name="CbUserId" SelectedValue="{Binding Path=UserId, Mode=TwoWay}" />
+                </GroupBox>
+
+                <GroupBox Header="Select Job" Grid.Row="2" Grid.Column="3">
+                    <ComboBox Name="CbJobId" Style="{StaticResource cbFree}" SelectedValue="{Binding Path=JobId, Mode=TwoWay}" />
+                </GroupBox>
+
+                <Label Name="LblTotal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="18" Content="" />
+
+                <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Click="BtnCancel_Click"  Content="Cancel" />
+                <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Click="BtnSubmit_Click"  Content="Submit" />
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
