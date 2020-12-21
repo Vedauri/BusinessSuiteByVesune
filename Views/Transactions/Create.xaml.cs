@@ -47,6 +47,7 @@ namespace BusinessSuiteByVesune.Views.Transactions
             if (result > 0)
             {
                 MessageBox.Show("Transaction was created", "Success");
+                this.Close();
             }
             else
             {
