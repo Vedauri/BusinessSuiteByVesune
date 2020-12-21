@@ -74,6 +74,7 @@ namespace BusinessSuiteByVesune.Views
 
         public void InventorySearch(SearchWindow window)
         {
+
             string name = window.TxtSearchItemName.Text;
             string price = window.TxtSearchItemPrice.Text;
             string quantity = window.TxtSearchItemQuantity.Text;
@@ -126,6 +127,12 @@ namespace BusinessSuiteByVesune.Views
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
+            if (dgData.Items.Count == 0)
+            {
+                MessageBox.Show("There are no records to search", "Information");
+                return;
+            }
+
             Views.SearchWindow window = new SearchWindow("1");
             window.Show();
             window.BtnGoSearch.Click += (s, ev) =>

@@ -56,6 +56,7 @@ namespace BusinessSuiteByVesune
             }
             Views.ControlPanelWindow cpWindow = new ControlPanelWindow();
             this.CpCurrentScreenContent.Content = cpWindow.Content;
+            this.miHome.Background = Brushes.LightSlateGray;
             this.LblContentTitle.Content = "Admin Panel";
         }
 
