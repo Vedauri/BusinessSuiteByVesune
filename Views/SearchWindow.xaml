@@ -32,27 +32,27 @@
             </Grid.RowDefinitions>
 
             <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
-                <TextBox Name="TxtSearchItemName" />
+                <TextBox Name="TxtSearchItemName" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Price" Grid.Row="0" Grid.Column="1">
-                <TextBox Name="TxtSearchItemPrice" />
+                <TextBox Name="TxtSearchItemPrice" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Quantity" Grid.Row="0" Grid.Column="2">
-                <TextBox Name="TxtSearchItemQuantity" />
+                <TextBox Name="TxtSearchItemQuantity" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Sku Number" Grid.Row="0" Grid.Column="3">
-                <TextBox Name="TxtSearchItemSkuNumber" />
+                <TextBox Name="TxtSearchItemSkuNumber" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Location" Grid.Row="1" Grid.Column="0">
-                <ComboBox Name="CbSearchItemLocationTypeId" />
+                <ComboBox Name="CbSearchItemLocationTypeId" Style="{StaticResource cbFree}" />
             </GroupBox>
 
             <GroupBox Header="Type of Item" Grid.Row="1" Grid.Column="1">
-                <ComboBox Name="CbSearchItemItemTypeId" />
+                <ComboBox Name="CbSearchItemItemTypeId" Style="{StaticResource cbFree}" />
             </GroupBox>
 
         </Grid>
@@ -72,19 +72,19 @@
             </Grid.RowDefinitions>
 
             <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
-                <TextBox Name="TxtSearchOrderName" />
+                <TextBox Name="TxtSearchOrderName" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Price" Grid.Row="0" Grid.Column="1">
-                <TextBox Name="TxtSearchOrderPrice" />
+                <TextBox Name="TxtSearchOrderPrice" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Quantity" Grid.Row="0" Grid.Column="2">
-                <TextBox Name="TxtSearchOrderQuantity" />
+                <TextBox Name="TxtSearchOrderQuantity" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Order Status" Grid.Row="0" Grid.Column="3">
-                <ComboBox Name="CbOrderStatusId" />
+                <ComboBox Name="CbOrderStatusId" Style="{StaticResource cbFree}" />
             </GroupBox>
 
         </Grid>
@@ -104,27 +104,27 @@
             </Grid.RowDefinitions>
 
             <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
-                <TextBox Name="TxtSearchJobName" />
+                <TextBox Name="TxtSearchJobName" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Balance Due" Grid.Row="0" Grid.Column="1">
-                <TextBox Name="TxtSearchJobBalanceDue" />
+                <TextBox Name="TxtSearchJobBalanceDue" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="City" Grid.Row="0" Grid.Column="2">
-                <TextBox Name="TxtSearchJobCity" />
+                <TextBox Name="TxtSearchJobCity" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Job Status" Grid.Row="0" Grid.Column="3">
-                <ComboBox Name="CbSearchJobJobStatusId" />
+                <ComboBox Name="CbSearchJobJobStatusId" Style="{StaticResource cbFree}" />
             </GroupBox>
 
             <GroupBox Header="Job Type" Grid.Row="1" Grid.Column="0">
-                <ComboBox Name="CbSearchJobJobTypeId" />
+                <ComboBox Name="CbSearchJobJobTypeId" Style="{StaticResource cbFree}" />
             </GroupBox>
 
             <GroupBox Header="Scheduled Date" Grid.Row="1" Grid.Column="1">
-                <DatePicker Name="DpSearchJobScheduledDate" />
+                <DatePicker Name="DpSearchJobScheduledDate" Style="{StaticResource DpFree}" />
             </GroupBox>
 
             <GroupBox Header="Is Mobile?" Grid.Row="1" Grid.Column="2">
@@ -148,11 +148,11 @@
             </Grid.RowDefinitions>
 
             <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
-                <TextBox Name="TxtSearchUserName" Text="{Binding Path=Search.User.Name}" />
+                <TextBox Name="TxtSearchUserName" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Pin" Grid.Row="0" Grid.Column="1">
-                <TextBox Name="TxtSearchUserPin" Text="{Binding Path=Search.User.Pin}" />
+                <TextBox Name="TxtSearchUserPin" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Working" Grid.Row="0" Grid.Column="2">
@@ -176,11 +176,11 @@
             </Grid.RowDefinitions>
 
             <GroupBox Header="Invoice Name" Grid.Row="0" Grid.Column="0">
-                <TextBox Name="TxtSearchInvoiceName" />
+                <TextBox Name="TxtSearchInvoiceName" Style="{StaticResource TxtFree}" />
             </GroupBox>
 
             <GroupBox Header="Invoice Status" Grid.Row="0" Grid.Column="1">
-                <ComboBox Name="CbSearchInvoiceStatus" />
+                <ComboBox Name="CbSearchInvoiceStatus" Style="{StaticResource cbFree}" />
             </GroupBox>
         </Grid>
 
@@ -199,15 +199,15 @@
             </Grid.RowDefinitions>
 
             <GroupBox Header="Select User" Grid.Row="0" Grid.Column="0">
-                <ComboBox Name="CbSearchTimesUserId" />
+                <ComboBox Name="CbSearchTimesUserId" Style="{StaticResource cbFree}" />
             </GroupBox>
 
             <GroupBox Header="Select Start Date" Grid.Row="0" Grid.Column="1">
-                <DatePicker Name="DpSearchTimesStartDate" />
+                <DatePicker Name="DpSearchTimesStartDate" Style="{StaticResource DpFree}" />
             </GroupBox>
 
             <GroupBox Header="Select End Date" Grid.Row="0" Grid.Column="2">
-                <DatePicker Name="DpSearchTimesEndDate" />
+                <DatePicker Name="DpSearchTimesEndDate" Style="{StaticResource DpFree}" />
             </GroupBox>
             
         </Grid>

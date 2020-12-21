@@ -129,6 +129,12 @@ namespace BusinessSuiteByVesune.Views
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
+            if (dgData.Items.Count == 0)
+            {
+                MessageBox.Show("There are no records to search", "Information");
+                return;
+            }
+
             Views.SearchWindow window = new SearchWindow("5");
             window.Show();
             window.BtnGoSearch.Click += (s, ev) =>

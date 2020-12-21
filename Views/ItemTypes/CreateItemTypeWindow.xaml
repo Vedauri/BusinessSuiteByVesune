@@ -19,7 +19,7 @@
 
             <TextBox Name="TxtItemTypeId" Text="{Binding Path=ItemTypeId, Mode=TwoWay}" Visibility="Hidden" />
 
-            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0">
+            <GroupBox Header="Name" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <TextBox Name="TxtItemTypeName" Style="{StaticResource TxtFree}" Text="{Binding Path=ItemTypeName, Mode=TwoWay}" />
             </GroupBox>
 
