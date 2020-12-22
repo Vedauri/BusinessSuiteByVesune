@@ -72,55 +72,100 @@ namespace BusinessSuiteByVesune.Views.Times
                 return;
             }
 
-            if (period.End == null)
+            period.Start = period.Start.AddHours(period.StartHour).AddMinutes(period.StartMinute);
+
+            if (Convert.ToBoolean(ChkClockedIn.IsChecked))
             {
-                MessageBox.Show("Select an end date", "Notice");
-                return;
+                period.End = null;
+            }
+            else
+            {
+                if (period.End == null)
+                {
+                    MessageBox.Show("Select an end date", "Notice");
+                    return;
+                }
+
+                if (period.Start.Date > Convert.ToDateTime(period.End).Date)
+                {
+                    // start date is later than the end date
+                    MessageBox.Show("Start date is set after the end date. Please make sure the start date begins before end date", "Notice");
+                    return;
+                }
+
+                if (period.Start.Date.Day != Convert.ToDateTime(period.End).Date.Day)
+                {
+                    MessageBox.Show("Unable to create a work period that exceeds one day. Please change the start and end date", "Notice");
+                    return;
+                }
+
+                if (period.EndMeridiem == 1)
+                {
+                    period.EndHour += 12;
+                }
+
+                try
+                {
+                    period.End = Convert.ToDateTime(period.End).AddHours(period.EndHour).AddMinutes(period.EndMinute);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                    return;
+                }
             }
 
-            if (period.Start.Date > Convert.ToDateTime(period.End).Date)
-            {
-                // start date is later than the end date
-                MessageBox.Show("Start date is set after the end date. Please make sure the start date begins before end date", "Notice");
-                return;
-            }
-
-            if (period.Start.Date.Day != Convert.ToDateTime(period.End).Date.Day)
-            {
-                MessageBox.Show("Unable to create a work period that exceeds one day. Please change the start and end date", "Notice");
-                return;
-            }
-
-            // here
-
-            // check meridiems
-
-            //// this is start time
             if (period.StartMeridiem == 1)
             { 
                 period.StartHour += 12;
             }
 
-            if (period.EndMeridiem == 1)
-            {
-                period.EndHour += 12;
-            }
 
-            period.Start = period.Start.AddHours(period.StartHour).AddMinutes(period.StartMinute);
+            // check if selected user is clocked in
+            // if clocked in, clock him out of that current period, using the current time
+            // then, clock him in to the current period by creating a new period
+            // show dialouge saying that youre clocking him out and clocking him in to a new time period
 
-            try
-            {
-                period.End = Convert.ToDateTime(period.End).AddHours(period.EndHour).AddMinutes(period.EndMinute);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-                return;
-            }
+            int selectedUserId = (int)CbUserId.SelectedValue;
+            User currentUser = new UserCRUD().Read(selectedUserId);
 
-            // to here
+            if (currentUser.Working && currentUser.WorkPeriodId > 0)
+            {
+                // this current user is working
+                // do you want to clock them out and create new work period?
+                MessageBoxResult messageBoxResult = MessageBox.Show("This user is currently clocked in. Creating this work period will clock them out of their current work period and create a new work period. Are you sure?", "Notice", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (messageBoxResult == MessageBoxResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    // current work period end is now
+                    WorkPeriod workPeriod = new WorkPeriodCRUD().Read(currentUser.WorkPeriodId);
+                    workPeriod.End = DateTime.Now;
+                    new WorkPeriodCRUD().Update(workPeriod);
+
+                    // clock the user out
+                    currentUser.WorkPeriodId = 0;
+                    currentUser.Working = false;
+                    int removeUserCurrentWorkPeriodId = new UserCRUD().Update(currentUser);
+                }
+            }
 
             result = new WorkPeriodCRUD().Create(period);
+
+            if (period.End == null)
+            {
+                // update user to be clocked in to current period
+
+                if (selectedUserId > 0 && result > 0)
+                {
+                    currentUser.WorkPeriodId = result;
+                    currentUser.Working = true;
+
+                    new UserCRUD().Update(currentUser);
+                }
+            }
 
             if (result > 0)
             {
@@ -176,27 +221,55 @@ namespace BusinessSuiteByVesune.Views.Times
             }
 
             TimeSpan start = new TimeSpan(startHour, startMinute, 0);
-            TimeSpan end = new TimeSpan(endHour, endMinute, 0);
+            TimeSpan end = new TimeSpan(0, 0, 0);
+            TimeSpan total = new TimeSpan(0, 0, 0);
 
-            TimeSpan total = end.Subtract(start);
-
-            if (total.Hours < 0)
+            if (Convert.ToBoolean(ChkClockedIn.IsChecked))
             {
-                this.BtnSubmit.IsEnabled = false;
-                result = total.Hours + " hours and " + total.Minutes + " minutes.";
-                LblTotal.Foreground = new SolidColorBrush(Colors.Red);
+                // end date is null
+                this.BtnSubmit.IsEnabled = true;
             }
             else
             {
-                this.BtnSubmit.IsEnabled = true;
-                result = total.Hours + " hours and " + total.Minutes + " minutes";
-                LblTotal.Foreground = new SolidColorBrush(Colors.Green);
-            }
+                // end date is value
+                end = new TimeSpan(endHour, endMinute, 0);
+                total = end.Subtract(start);
 
-            
+                if (total.Hours < 0)
+                {
+                    this.BtnSubmit.IsEnabled = false;
+                    result = total.Hours + " hours and " + total.Minutes + " minutes.";
+                    LblTotal.Foreground = new SolidColorBrush(Colors.Red);
+                }
+                else
+                {
+                    this.BtnSubmit.IsEnabled = true;
+                    result = total.Hours + " hours and " + total.Minutes + " minutes";
+                    LblTotal.Foreground = new SolidColorBrush(Colors.Green);
+                }
+            }
 
             LblTotal.Content = result;
 
+        }
+
+        private void ChkClockedIn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TxtEndHour.IsEnabled = true;
+            TxtEndMinute.IsEnabled = true;
+            DpEndDate.IsEnabled = true;
+            CbEndMeridiem.IsEnabled = true;
+            LblTotal.Visibility = Visibility.Visible;
+        }
+
+        private void ChkClockedIn_Checked(object sender, RoutedEventArgs e)
+        {
+            TxtEndHour.IsEnabled = false;
+            TxtEndMinute.IsEnabled = false;
+            DpEndDate.IsEnabled = false;
+            CbEndMeridiem.IsEnabled = false;
+            LblTotal.Visibility = Visibility.Hidden;
+            this.BtnSubmit.IsEnabled = true;
         }
     }
 }

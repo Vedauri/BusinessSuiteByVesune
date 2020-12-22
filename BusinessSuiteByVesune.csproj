@@ -60,10 +60,10 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>57D3528B40EEA131B55266060BA9FDE00A1A8E55</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>07959C39BC9862F81D19530C8B371AF76B2C48D2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>BusinessSuiteByVesune_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>BusinessSuiteByVesune_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -517,6 +517,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BusinessSuiteByVesune_1_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_2_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_3_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_TemporaryKey.pfx" />

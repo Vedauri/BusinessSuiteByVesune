@@ -20,6 +20,8 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
+            <TextBox Name="TxtTransactionId" Text="{Binding Path=TransactionId, Mode=TwoWay}" Visibility="Hidden" />
+
             <GroupBox Header="Transaction Name" Grid.Row="0" Grid.Column="0">
                 <TextBox Name="TxtTransactionName" Style="{StaticResource TxtFree}" Text="{Binding Path=Name, Mode=TwoWay}" />
             </GroupBox>
