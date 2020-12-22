@@ -58,7 +58,7 @@ namespace BusinessSuiteByVesune.CRUD
                     }
 
 
-                    master.HoursOwed = Convert.ToInt32(master.TotalJobTime.TotalHours) - Convert.ToInt32(master.HoursPaid);
+                    master.HoursOwed = Convert.ToInt32(master.TotalJobTime.Hours) - Convert.ToInt32(master.HoursPaid);
 
                     //TODO: fix decimal bug
 

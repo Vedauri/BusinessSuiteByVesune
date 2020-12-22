@@ -60,10 +60,10 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>07959C39BC9862F81D19530C8B371AF76B2C48D2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C41B03BBF3A340ED333DFEBDC8DFD891002D02C1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>BusinessSuiteByVesune_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>BusinessSuiteByVesune_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -520,6 +520,7 @@
     <None Include="BusinessSuiteByVesune_1_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_2_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_3_TemporaryKey.pfx" />
+    <None Include="BusinessSuiteByVesune_4_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
