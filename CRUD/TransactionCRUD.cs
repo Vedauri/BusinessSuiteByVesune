@@ -56,6 +56,7 @@ namespace BusinessSuiteByVesune.CRUD
                 {
                     while (reader.Read())
                     {
+                        trans.TransactionId = Convert.ToInt32(reader["TransactionId"].ToString());
                         trans.Name = reader["Name"].ToString();
                         trans.Amount = Convert.ToDecimal(reader["Amount"].ToString());
                         trans.Notes = reader["Notes"].ToString();

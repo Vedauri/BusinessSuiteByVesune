@@ -50,6 +50,10 @@
                     <ComboBox Name="CbEndMeridiem" SelectionChanged="ReloadTotalTime_LostFocus" SelectedValue="{Binding Path=EndMeridiem, Mode=TwoWay}" />
                 </GroupBox>
 
+                <GroupBox Header="Clocked In" Grid.Row="1" Grid.Column="3">
+                    <CheckBox Name="ChkClockedIn" Checked="ChkClockedIn_Checked"  Unchecked="ChkClockedIn_Unchecked" IsChecked="{Binding Path=ClockedIn, Mode=TwoWay}" />
+                </GroupBox>
+
                 <GroupBox Header="Start Date" Grid.Row="2" Grid.Column="0">
                     <DatePicker Name="DpStartDate" Text="{Binding Path=Start, Mode=TwoWay}" />
                 </GroupBox>

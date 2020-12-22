@@ -22,6 +22,7 @@ namespace BusinessSuiteByVesune.CRUD
                     Master master = new Master();
                     master.JobId = job.JobId;
                     master.UserId = userId;
+                    master.JobName = job.Name;
 
                     //get work periods for user and job
                     List<WorkPeriod> workPeriods = new WorkPeriodCRUD().GetWorkPeriodsByJobAndUser(job.JobId, userId);
@@ -35,7 +36,7 @@ namespace BusinessSuiteByVesune.CRUD
                                 master.TotalJobTime += span;
                             }
                         }
-                        master.TotalJobTimeReadable = master.TotalJobTime.TotalHours + " hours and " + master.TotalJobTime.Minutes + " minutes";
+                        master.TotalJobTimeReadable = master.TotalJobTime.Hours + " hours and " + master.TotalJobTime.Minutes + " minutes";
                     }
 
                     // get transactions for user and job

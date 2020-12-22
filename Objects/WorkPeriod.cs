@@ -23,5 +23,6 @@ namespace BusinessSuiteByVesune.Objects
         public int EndMinute { get; set; }
         public int StartMeridiem { get; set; }
         public int EndMeridiem { get; set; }
+        public bool ClockedIn { get; set; }
     }
 }
