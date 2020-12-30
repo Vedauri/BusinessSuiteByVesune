@@ -22,7 +22,14 @@ namespace BusinessSuiteByVesune.CRUD
 
                 command.Parameters.AddWithValue("@Name", trans.Name);
                 command.Parameters.AddWithValue("@Amount", trans.Amount);
-                command.Parameters.AddWithValue("@Notes", trans.Notes);
+                if (String.IsNullOrEmpty(trans.Notes))
+                {
+                    command.Parameters.AddWithValue("@Notes", "");
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Notes", trans.Notes);
+                }
                 command.Parameters.AddWithValue("@JobId", trans.JobId);
                 command.Parameters.AddWithValue("@UserId", trans.UserId);
 
