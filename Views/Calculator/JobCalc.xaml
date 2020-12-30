@@ -1,0 +1,57 @@
+﻿<Window x:Class="BusinessSuiteByVesune.Views.Calculator.JobCalc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessSuiteByVesune.Views.Calculator"
+        mc:Ignorable="d"
+        Title="JobCalc" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Man Hours *" Grid.Row="0" Grid.Column="0">
+                <TextBox Name="TxtManHours" Style="{StaticResource TxtFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Labor Rate *" Grid.Row="0" Grid.Column="1">
+                <TextBox Name="TxtLaborRate" Style="{StaticResource TxtFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Total Labor Cost" Grid.Row="0" Grid.Column="2">
+                <Label Name="TxtWorkRate" Content="Hours times Rate" />
+            </GroupBox>
+
+            <!-- next row -->
+            
+            <GroupBox Header="Media Amount In Bags *" Grid.Row="1" Grid.Column="0">
+                <TextBox Name="TxtMediaAmount" Style="{StaticResource TxtFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Media Cost Per Bag *" Grid.Row="1" Grid.Column="1">
+                <TextBox Name="TxtMediaCost" Style="{StaticResource TxtFree}" />
+            </GroupBox>
+
+            <GroupBox Header="Total Media Cost" Grid.Row="1" Grid.Column="2">
+                <Label Name="a" Content="Hours times Rate" />
+            </GroupBox>
+            
+            <!-- coating row -->
+
+            <Button Grid.Row="3" Grid.Column="0" Name="BtnCancel" Content="Cancel" Click="BtnCancel_Click" Style="{StaticResource BtnSmallOption}" />
+            <Button Grid.Row="3" Grid.Column="3" Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" Style="{StaticResource BtnSmallOption}" />
+
+        </Grid>
+    </Grid>
+</Window>

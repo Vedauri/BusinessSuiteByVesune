@@ -189,5 +189,14 @@ namespace BusinessSuiteByVesune
             this.miTransactions.Background = Brushes.LightSlateGray;
             this.LblContentTitle.Content = "Manage Transactions";
         }
+
+        private void miCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            Views.CalculatorWindow window = new CalculatorWindow();
+            this.CpCurrentScreenContent.Content = window.Content;
+            ResetMenuButtons();
+            this.miCalculator.Background = Brushes.LightSlateGray;
+            this.LblContentTitle.Content = "Calculator";
+        }
     }
 }

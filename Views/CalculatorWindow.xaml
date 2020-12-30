@@ -6,21 +6,43 @@
         xmlns:local="clr-namespace:BusinessSuiteByVesune.Views"
         mc:Ignorable="d"
         Title="CalculatorWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <Grid Name="gMain">
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="75" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        
-        <!--
-        
-        
-        
-        -->
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="gOptions" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource BtnOption}" Name="btnJobCalculator" Click="btnJobCalculator_Click"  Content="Job" />
+            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource BtnOption}" Name="btnEmployeePay" Click="BtnExport_Click" Content="Employee Pay" />
+            <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource BtnOption}" Name="btnTax" Click="BtnCreate_Click" Content="Tax" />
+            <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource BtnOption}" Name="btnBlastJob" Click="BtnRead_Click" Content="Blast Job" />
+            <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource BtnOption}" Name="btnCoatJob" Click="BtnUpdate_Click" Content="Coat Job" />
+            <Button Grid.Row="0" Grid.Column="5" Style="{StaticResource BtnOption}" Name="btnROI" Click="BtnDestroy_Click" Content="ROI" />
+        </Grid>
+
+        <Grid Name="gData" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ContentPresenter Grid.Row="1" x:Name="cpCurrentCalulatorWindow" Content="{Binding Path=CurrentCalculatorScreenContent}" />
+        </Grid>
     </Grid>
 </Window>

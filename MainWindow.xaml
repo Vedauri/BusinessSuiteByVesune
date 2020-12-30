@@ -24,6 +24,7 @@
             <MenuItem Click="miTimes_Click" Name="miTimes" Header="Times" Style="{StaticResource MenuBox}"></MenuItem>
             <MenuItem Click="miTransactions_Click"  Name="miTransactions" Header="Transactions" Style="{StaticResource MenuBox}"></MenuItem>
             <MenuItem Click="miManager_Click" Name="miManager" Header="Manager" Style="{StaticResource MenuBox}"></MenuItem>
+            <MenuItem Click="miCalculator_Click"  Name="miCalculator" Header="Calculator" Style="{StaticResource MenuBox}"></MenuItem>
             <MenuItem Click="miLogout_Click"  Name="miLogout" Header="Logout" Style="{StaticResource MenuBox}"></MenuItem>
         </Menu>
 

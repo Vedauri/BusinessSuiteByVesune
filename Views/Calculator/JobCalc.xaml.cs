@@ -12,22 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BusinessSuiteByVesune.Views
+namespace BusinessSuiteByVesune.Views.Calculator
 {
     /// <summary>
-    /// Interaction logic for CalculatorWindow.xaml
+    /// Interaction logic for JobCalc.xaml
     /// </summary>
-    public partial class CalculatorWindow : Window
+    public partial class JobCalc : Window
     {
-        public CalculatorWindow()
+        public JobCalc()
         {
             InitializeComponent();
-        }
-
-        private void btnJobCalculator_Click(object sender, RoutedEventArgs e)
-        {
-            Views.Calculator.JobCalc window = new Views.Calculator.JobCalc();
-            this.cpCurrentCalulatorWindow.Content = window.Content;
         }
     }
 }

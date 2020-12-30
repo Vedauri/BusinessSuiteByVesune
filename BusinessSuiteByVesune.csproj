@@ -119,6 +119,9 @@
     <Compile Include="Views\CalculatorWindow.xaml.cs">
       <DependentUpon>CalculatorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Calculator\JobCalc.xaml.cs">
+      <DependentUpon>JobCalc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Charges\CreateChargeWindow.xaml.cs">
       <DependentUpon>CreateChargeWindow.xaml</DependentUpon>
     </Compile>
@@ -292,6 +295,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CalculatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Calculator\JobCalc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
