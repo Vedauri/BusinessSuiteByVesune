@@ -60,10 +60,10 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C41B03BBF3A340ED333DFEBDC8DFD891002D02C1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>424919AAE20F6C59823CA45834FA490E3A88DDF0</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>BusinessSuiteByVesune_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>BusinessSuiteByVesune_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -116,6 +116,9 @@
     <Compile Include="Objects\OrderStatus.cs" />
     <Compile Include="Objects\Search.cs" />
     <Compile Include="Objects\Transaction.cs" />
+    <Compile Include="Views\CalculatorWindow.xaml.cs">
+      <DependentUpon>CalculatorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Charges\CreateChargeWindow.xaml.cs">
       <DependentUpon>CreateChargeWindow.xaml</DependentUpon>
     </Compile>
@@ -288,6 +291,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CalculatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Charges\CreateChargeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -521,6 +528,7 @@
     <None Include="BusinessSuiteByVesune_2_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_3_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_4_TemporaryKey.pfx" />
+    <None Include="BusinessSuiteByVesune_5_TemporaryKey.pfx" />
     <None Include="BusinessSuiteByVesune_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
